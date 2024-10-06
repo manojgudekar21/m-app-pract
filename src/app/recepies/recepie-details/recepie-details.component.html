@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="recepie.imagePath" alt="" style="max-width: 300px;">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <a appOpenmenu>
+            <button class="btn btn-primary dropdown-toggle">manage <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li style="cursor: pointer;" (click)="toShoppingList()">to shopping list</li>
+                <li style="cursor: pointer;" (click)="toEdit()">to edit</li>
+                <li style="cursor: pointer;" (click)="onDelete()">to delete</li>
+            </ul>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        {{recepie.name}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        {{recepie.discription}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <ul *ngFor="let ingrident of recepie.ingridents">
+            <li>{{ingrident.ingrident}} ({{ingrident.amount}})</li>
+        </ul>
+    </div>
+</div>
